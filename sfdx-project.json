@@ -1,0 +1,12 @@
+{
+  "packageDirectories": [
+    {
+      "path": "force-app",
+      "default": true
+    }
+  ],
+  "name": "LWC Sessions",
+  "namespace": "",
+  "sfdcLoginUrl": "https://jeffjames-dev-ed.develop.my.salesforce.com",
+  "sourceApiVersion": "57.0"
+}
