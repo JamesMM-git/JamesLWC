@@ -7,6 +7,6 @@
   ],
   "name": "LWC Sessions",
   "namespace": "",
-  "sfdcLoginUrl": "https://login.salesforce.com",
+  "sfdcLoginUrl": "https://jeffjames-dev-ed.develop.my.salesforce.com",
   "sourceApiVersion": "57.0"
 }
