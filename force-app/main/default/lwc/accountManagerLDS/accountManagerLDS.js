@@ -11,15 +11,18 @@ export default class AccountManagerLDS extends LightningElement{
         this.accountName = event.target.value;
     }
     accountPhoneChangeHandler(event){
-        this.accountName = event.target.value;
+        this.accountPhone = event.target.value;
     }
     accountWebsiteChangeHandler(event){
-        this.accountName = event.target.value;
+        this.accountWebsite = event.target.value;
     }
 
     createAccount(){
-        const fields = {'Name ' : this.accountName, 'Phone' : this.accountPhone, 'Website': this.accountWebiste};
-        const recordInput = {apiName : 'Account ', fields}
+        const fields = {'Name' : this.accountName, 'Phone' : this.accountPhone, 'Website': this.accountWebsite};
+        const recordInput = {
+            'apiName' : 'Account',
+            'fields' : fields
+        }
 
         createRecord(recordInput).then(response =>{
             console.log('Account has been created :', response.id)
