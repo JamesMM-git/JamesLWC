@@ -1,10 +1,10 @@
-import { LightningElement, wire } from 'lwc';
+import { LightningElement, track} from 'lwc';
 import getAllAccounts from '@salesforce/apex/AccountManager.getAccount'
 
 export default class AccountManageApex extends LightningElement {
 
-    @wire(getAllAccounts)
-    accounts;
+    @track numberOfRecords;
+    @track accounts;
 
     get responseReceived(){
         if(this.accounts){
@@ -13,4 +13,15 @@ export default class AccountManageApex extends LightningElement {
         return false;
     }
 
+    numberOfAccountChangeHandler(event){
+        this.numberOfRecords = event.target.value;
+    }
+    getAccounts(){
+        getAllAccounts({numberOfRecords:this.numberOfRecords}).then(response =>{
+                this.accounts=response;
+        }).catch(error=>{
+            console.log('Error in getting the accountds', error.body.message);
+
+        }) 
+    }
 }
